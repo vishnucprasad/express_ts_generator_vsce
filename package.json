@@ -1,0 +1,58 @@
+{
+  "name": "express-ts-generator",
+  "displayName": "Express TS Generator",
+  "description": "Express TS Generator is a vs-code extension that allows you to quickly generate a new Express server project with TypeScript support.",
+  "icon": "expressjs_logo.png",
+  "repository": {
+    "url": "https://github.com/vishnucprasad/express_ts_generator_extension"
+  },
+  "homepage": "https://github.com/vishnucprasad/express_ts_generator_extension",
+  "author": {
+    "name": "Vishnu C Prasad",
+    "email": "mail@vishnucprasad.in",
+    "url": "https://vishnucprasad.in"
+  },
+  "publisher": "vishnucprasad",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "express-ts-generator.generate",
+        "title": "Express TS Generator - Generate new express ts project"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.88.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
